@@ -2,6 +2,8 @@
 
 Kella is a high-performance shopping assistant engineered to streamline the online retail experience. Developed with a focus on modern web standards and machine learning, this project demonstrates the integration of a PyTorch-based NLP backend with a responsive, interactive frontend.
 
+![Kella App Preview](static/images/app_preview.png)
+
 ## Project Overview
 
 This application serves as a comprehensive e-commerce interface where users can interact with an intelligent agent to search for products, check order statuses, and receive instant support. The system is built on a Flask architecture, ensuring robust communication between the client-side interface and the server-side inference engine.
