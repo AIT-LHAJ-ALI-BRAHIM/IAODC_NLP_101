@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 20px 10%;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: url('https://source.unsplash.com/1600x400/?flowers') no-repeat center center/cover;
+        }
+
+        section {
+            padding: 40px 10%;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1e3c72;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: calc(33% - 20px);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+
+        .card p {
+            font-size: 1em;
+            padding: 0 15px;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #f1f1f1;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        footer a:hover {
+            color: #ffcc00;
+        }
+
+        /* Chatbot styles */
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            max-height: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+        }
+
+        .chatbot-header {
+            background: #1e3c72;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        .chatbot-input button {
+            background: #1e3c72;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chatbot-input button:hover {
+            background: #2a5298;
+        }
+
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #1e3c72;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-icon:hover {
+            background: #2a5298;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Flower Gallery</h1>
+        <p>Explore the beauty of nature</p>
+    </header>
+    <div class="hero-image"></div>
+
+    <section>
+        <h2>Flower Collection</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://png.pngtree.com/background/20230424/original/pngtree-an-image-of-wheat-in-front-of-mountains-picture-image_2455711.jpg" alt="Rose">
+                <h3>Roses</h3>
+                <p>Delicate and romantic, roses are timeless.</p>
+            </div>
+            <div class="card">
+                <img src="https://www.mrfothergills.com.au/cdn/shop/articles/Sunflower.png?v=1726819284&width=1024" alt="Sunflower">
+                <h3>Sunflowers</h3>
+                <p>Bright and cheerful, a symbol of happiness.</p>
+            </div>
+            <div class="card">
+                <img src="https://westmountflorist.com/cdn/shop/articles/tulips-4322635_1920_-2.jpg?v=1726171898&width=2048" alt="Tulip">
+                <h3>Tulips</h3>
+                <p>Elegant and colorful, perfect for any occasion.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Follow us on:</p>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <p>© 2024 Flower Gallery. All rights reserved.</p>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chat-icon" onclick="toggleChat()">
+        <i class="fa fa-comments"></i>
+    </div>
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot-header">Chat with us!</div>
+        <div class="chatbot-messages" id="messages"></div>
+        <div class="chatbot-input">
+            <input type="text" id="chat-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatbot = document.getElementById('chatbot');
+        const messages = document.getElementById('messages');
+
+        function toggleChat() {
+            chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value;
+            if (message.trim()) {
+                const userMessage = `<div style="text-align: right; margin: 10px 0;"><strong>You:</strong> ${message}</div>`;
+                const botReply = `<div style="text-align: left; margin: 10px 0;"><strong>Bot:</strong> Thank you for your message!</div>`;
+                messages.innerHTML += userMessage + botReply;
+                input.value = '';
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+    </script>
+</body>
+
+</html>
