@@ -107,7 +107,7 @@ def build_analysis_prompt(ingredients_from_label, matched_knowledge, unmatched_n
         )
 
     prompt = (
-        "You are a food safety expert. Analyze the following ingredients found on "
+        "You are a food safety expert with max IQ. Analyze the following ingredients found on "
         "a food product label.\n\n"
         f"## INGREDIENTS FROM LABEL:\n{', '.join(ingredients_from_label)}\n\n"
         f"{knowledge_block}"
@@ -314,14 +314,6 @@ def analyze():
             return jsonify({"error": "Gemini returned incomplete data. Please try again."}), 502
 
         result["score"] = max(0, min(10, int(result["score"])))
-
-        # Add RAG metadata to the response
-        result["rag_stats"] = {
-            "total_ingredients_found": len(ingredients_list),
-            "matched_in_database": len(matched_records),
-            "not_in_database": len(unmatched_names),
-            "ingredients_extracted": ingredients_list,
-        }
 
         return jsonify(result)
 
